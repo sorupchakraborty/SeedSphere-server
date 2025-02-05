@@ -15,7 +15,6 @@ app.use(express.json());
 const PORT = 3000 || process.env.PORT;
 
 
-// MongoDB Database Connection
 
 const uri = process.env.MONGODB_URI;
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -65,8 +64,6 @@ async function run() {
         const donations = await donatationCollection.find({ campaignId: id }).toArray();
         res.send(donations);
     });
-
-
 
     app.post('/campaigns', async (req, res) => {
         const newCampaign = req.body;
