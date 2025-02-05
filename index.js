@@ -32,8 +32,6 @@ async function run() {
         const donatationCollection = database.collection("donations");
 
 
-        // campaigns operation
-
         app.get('/campaigns', async (req, res) => {
             const campaigns = await campaignsCollection.find().toArray();
             res.send(campaigns);
