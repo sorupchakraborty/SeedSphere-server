@@ -91,7 +91,6 @@ async function run() {
     });
 
 
-    // donation operation
 
     app.get('/donations', async (req, res) => {
         const donations = await donatationCollection.find().toArray();
